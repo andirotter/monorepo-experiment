@@ -1,0 +1,52 @@
+{
+  "name": "@app/server",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "build:essential": "yarn run build",
+    "watch": "tsc --watch",
+    "start": "node -r @app/config/env dist/index.js",
+    "dev": "nodemon --signal SIGINT --watch 'dist/**/*.js' -x 'node --inspect=9678 -r @app/config/env -r source-map-support/register' dist/index.js"
+  },
+  "dependencies": {
+    "@app/client": "0.0.0",
+    "@app/config": "0.0.0",
+    "@graphile-contrib/pg-simplify-inflector": "^5.0.0-beta.1",
+    "@graphile/pg-pubsub": "^4.6.0-alpha.0",
+    "@graphile/pro": "^0.9.0",
+    "@graphile/subscriptions-lds": "^4.6.0-alpha.0",
+    "@types/chalk": "^2.2.0",
+    "@types/connect-pg-simple": "^4.2.0",
+    "@types/connect-redis": "^0.0.13",
+    "@types/express-session": "^1.15.16",
+    "@types/graphql": "*",
+    "@types/helmet": "^0.0.45",
+    "@types/morgan": "^1.7.36",
+    "@types/passport": "^1.0.2",
+    "@types/passport-github": "^1.1.5",
+    "@types/pg": "^7.4.14",
+    "@types/redis": "^2.8.14",
+    "chalk": "^3.0.0",
+    "connect-pg-simple": "^6.0.0",
+    "connect-redis": "^4.0.3",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "graphile-utils": "^4.6.0-alpha.0",
+    "helmet": "^3.21.1",
+    "lodash": "^4.17.15",
+    "morgan": "^1.9.1",
+    "next": "^9.1.5",
+    "passport": "^0.4.1",
+    "passport-github": "^1.1.0",
+    "pg": "^7.14.0",
+    "postgraphile": "^4.6.0-alpha.0",
+    "redis": "^2.8.0",
+    "source-map-support": "^0.5.16",
+    "subscriptions-transport-ws": "^0.9.16",
+    "ws": "^7.1.2"
+  },
+  "devDependencies": {
+    "graphql": "^14.4.2"
+  }
+}
